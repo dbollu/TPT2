@@ -13,7 +13,9 @@ Running = {borf.package.name}
 Version = {borf.package.version}
 
 executesync({borf.script.config})
+
 execute({borf.script.era})
+
 execute({borf.script.inf})
 execute({borf.script.common})
 execute({borf.script.other})
