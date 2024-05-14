@@ -1,13 +1,33 @@
 :import macro.towertesting
 :import jthierry.macro.array
 
-:local double cost
-:local int disables
+:local int secured
+:local int end
+:local string modules_to_secure
+:local string a_modules
+:local string next
+
+; Configure your modules to be secured here.
+; should be a semicolon-separated list of module IDs
+lss("modules_to_secure", "")
+
+lss("a_modules", {array(lsg("modules_to_secure"))})
+lis("end", {length(lsg("a_modules"))})
+gotoif(lig("end") == 0, 99)
+
+lis("secured", 0)
+
+lss("next", {get(lsg("a_modules", lig("secured")))})
 
 waituntil({phase} == 3)
-gis("disables", 0)
-gds("cost", 1e3)
 
+; todo: fill out the remainig code
 loop:
-waituntil(xp() >= gdg("cost"))
+waituntil(xp() >= disable.inf.cost())
+disable.inf(lsg("next"))
+lis("secured", lig("secured") + 1)
+goto(if(lig("secured") == lig("end"), last, loop))
+
+last:
+waituntil(xp() >= disable.inf.cost())
 
