@@ -1,0 +1,23 @@
+:import macro.towertesting
+:import borf.macros
+
+:global string Version
+:global string Running
+
+wakeup()
+game.newround()
+
+{tower_alive}
+
+Running = {borf.package.name}
+Version = {borf.package.version}
+
+executesync({borf.script.config})
+execute({borf.script.era})
+execute({borf.script.inf})
+execute({borf.script.common})
+execute({borf.script.other})
+
+; This won't actually execute unless the run ends
+; see the script itself for further information
+execute({borf.script.stop})

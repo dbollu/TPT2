@@ -1,0 +1,21 @@
+; This is a library of macros related to tower testing.
+
+; Returns true if the game is in towertesting mode AND the tower's
+; HP are above zero. This is a very heavily used snippet in tower testing.
+#tower_alive isTowerTesting() && (health(true) > 0.0)
+
+; This returns 3 if you are in infinity phase, 2 if you are in the era
+; phase and 1 otherwise. Returned as an int.
+#phase if(infinity() > 0.0, 3, if(era() > 0.0, 2, 1))
+
+; Same deal as the "phase" macro except more verbose (returns a string instead of a number)
+#phase_txt if(infinity() > 0.0, "INFINITY", if(era() > 0.0, "ERA", "WAVE"))
+
+; This returns your wave progression as one number. Note that it will
+; be in FULL NOTATION e.g. era 1 returns 100,000,000,000.0
+; if you want it to be in scientific notation give the result of this macro to
+; "to_enotation", in lib "numbers"
+#total_waves wave() + (1e11 * era()) + (1e22 * infinity())
+
+; Returns the xp cost of securing a module for the n-th time in a run
+#infinity_cost(n) if({n} < 1, 0.0, 1000.0^{n})

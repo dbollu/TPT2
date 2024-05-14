@@ -1,0 +1,14 @@
+; Return the Dark Scaling multiplier based on its tier
+#darksac_scaling(tier) if({tier} < 6, 1, 1 + (({tier} - 5) / 100))
+
+; raw version of the below macro, do not use directly
+#darksac_raw(tier) (health(false) * {darksac_scaling(tier)}) ^ 0.2
+; Return the damage multiplier you would get from using Dark Sacrifice now
+; only works during tower testing!
+#darksac_bonus(element, tier) \
+if({element} == "darkness", {darksac_raw({tier})},\
+if({element} == "light", ({darksac_raw({tier})}) ^ 0.8,\
+if({element} == "nature", (({darksac_raw({tier})}) ^ 0.8) * 0.94,\
+if({element} == "earth", ((({darksac_raw({tier})}) ^ 0.8) * 0.94) ^ 0.8,\
+1\
+))))

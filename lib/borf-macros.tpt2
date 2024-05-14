@@ -1,0 +1,51 @@
+; ------------------------------------ |
+; WELCOME TO THE BORF MEGA-PACKAGE !!! |
+; ------------------------------------ |
+
+; some legal stuff
+#borf.package.name "Borf Mega Package by Florin_TK"
+#borf.package.version "Ver. 0.1"
+
+; This script is a library of macros for other scripts of this workspace.
+; Since you can call macros from files in other workspaces as long as said
+; files are imported, I prefixed all macro names with "borf." to reduce the
+; risk of conflicting with names from other libs.
+
+
+; --------------
+; CONTROL MACROS
+; --------------
+
+; Some controls to be configured here for future QoL features
+; since they're macros, you have to modify them in the editor, you can't do it
+; ingame!
+
+; Kill the current run
+#borf.tower.suicide k
+; Switch between FARMING and PUSHING modes
+#borf.resstrat.swap s
+; Scroll through regions
+#borf.region.scrollup r
+#borf.region.scrolldown t
+; Scroll through difficulties
+#borf.difficulty.raise d
+#borf.difficulty.lower f
+
+; ----------------------------
+; UTILITY MACROS, DON'T TOUCH!
+; ----------------------------
+
+; we need this for the targeted spells (the ones that require calling
+; useposition instead of useinstant)
+#borf.tower.position vec(0.0, 0.0)
+
+; some aliases for scripts
+#borf.script.start "borf.AI:Activate"
+#borf.script.config "borf.AI:Configuration"
+#borf.script.multi "borf.AI:MultishotSpammer"
+#borf.script.bounce "borf.AI:BounceSpammer"
+#borf.script.common "borf.AI:CommonSkills"
+#borf.script.other "borf.AI:OtherSkills"
+#borf.script.era "General.AI:Era"
+#borf.script.inf "borf.AI:Infinity"
+#borf.script.stop "borf.AI:Deactivate"

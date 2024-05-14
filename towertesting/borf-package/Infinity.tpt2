@@ -1,0 +1,13 @@
+:import macro.towertesting
+:import jthierry.macro.array
+
+:local double cost
+:local int disables
+
+waituntil({phase} == 3)
+gis("disables", 0)
+gds("cost", 1e3)
+
+loop:
+waituntil(xp() >= gdg("cost"))
+

@@ -1,0 +1,7 @@
+; There isn't any builtin abs() function in the editor so here I programmed one in macro form.
+; a: int or double, the number to get the absolute value from
+#absolute(a) if({a} > 0, {a}, -{a})
+
+; This returns the argument num as a string in scientific notation (eg 1000000 -> 1e6).
+; num: double, the number to convert to scientific notation.
+#to_enotation(num) {lua(return string.format("e", {num}))}
