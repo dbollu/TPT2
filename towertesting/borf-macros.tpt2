@@ -39,7 +39,7 @@
 ; useposition instead of useinstant)
 #borf.tower.position vec(0.0, 0.0)
 
-; some aliases for scripts
+; some aliases for scripts (warning, spoilers in a couple script names)
 #borf.script.start "borf.AI:Activate"
 #borf.script.config "borf.AI:Configuration"
 #borf.script.multi "borf.AI:MultishotSpammer"

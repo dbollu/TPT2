@@ -16,6 +16,3 @@
 ; if you want it to be in scientific notation give the result of this macro to
 ; "to_enotation", in lib "numbers"
 #total_waves wave() + (1e11 * era()) + (1e22 * infinity())
-
-; Returns the xp cost of securing a module for the n-th time in a run
-#infinity_cost(n) if({n} < 1, 0.0, 1000.0^{n})
