@@ -8,26 +8,26 @@
 :local string next
 
 ; Configure your modules to be secured here.
-; should be a semicolon-separated list of module IDs
-lss("modules_to_secure", "")
+; this must be a semicolon-separated list of module IDs
+; you may modify this ingame
+modules_to_secure = ""
 
-lss("a_modules", {array(lsg("modules_to_secure"))})
-lis("end", {length(lsg("a_modules"))})
-gotoif(lig("end") == 0, 99)
+a_modules = {array(modules_to_secure)}
+end = {length(a_modules)} - 1
 
-lis("secured", 0)
+secured = 0
 
-lss("next", {get(lsg("a_modules", lig("secured")))})
+next = {get(a_modules, secured)}
 
 waituntil({phase} == 3)
 
-; todo: fill out the remainig code
 loop:
-waituntil(xp() >= disable.inf.cost())
-disable.inf(lsg("next"))
-lis("secured", lig("secured") + 1)
-goto(if(lig("secured") == lig("end"), last, loop))
+    waituntil(xp() >= disable.inf.cost())
+    disable.inf(next)
+    secured = secured + 1
+    next = {get(a_modules, secured)}
+    goto(if(secured == end, last, loop))
 
 last:
-waituntil(xp() >= disable.inf.cost())
-
+    waituntil(xp() >= disable.inf.cost())
+    disable.inf(next)
