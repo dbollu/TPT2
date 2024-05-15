@@ -1,5 +1,14 @@
 :import borf.macros
+:import jthierry.macro.moduleID
 
+:global int cs_instances
+:local int this_instance
 
-execute({borf.script.multi})
-execute({borf.script.bounce})
+wait(0.2)
+execute(if(cs_instances == 0, {borf.script.common}, ""))
+cs_instances = cs_instances + 1
+this_instance = cs_instances
+
+loop:
+    useinstant(if(this_instance == 1, active.index({SuperMultishot}), active.index({SuperBounce})))
+goto(loop)
