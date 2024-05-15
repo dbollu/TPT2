@@ -42,10 +42,9 @@
 ; some aliases for scripts (warning, spoilers in a couple script names)
 #borf.script.start "borf.AI:Activate"
 #borf.script.config "borf.AI:Configuration"
-#borf.script.multi "borf.AI:MultishotSpammer"
-#borf.script.bounce "borf.AI:BounceSpammer"
 #borf.script.common "borf.AI:CommonSkills"
 #borf.script.other "borf.AI:OtherSkills"
+#borf.script.other2 "borf.AI:OtherSkillsChild"
 #borf.script.era "General.AI:Era"
 #borf.script.inf "borf.AI:Infinity"
 #borf.script.stop "borf.AI:Deactivate"
