@@ -1,0 +1,19 @@
+:import borf.macros
+:import jthierry.macro.array
+
+:local string stop_scripts
+local int i
+
+; This script stops all other scripts in its package.
+; It actually executes once the tower dies or the tt
+; run is forcibly closed by the player.
+
+; as long as the game is in tt mode and the round-over
+; window is not visible, this script is paused.
+
+stop_scripts = {array({borf.script.common} . ";" . {borf.script.other} . ";" . {borf.script.other2} . ";" . {borf.script.era} . ";" . {borf.script.inf})}
+
+loop:
+    stop({get(stop_scripts, i)})
+    i += 1
+gotoif(i < {length(stop_scripts)}, loop)

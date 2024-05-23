@@ -41,7 +41,6 @@
 
 ; some aliases for scripts (warning, spoilers in a couple script names)
 #borf.script.start "borf.AI:Activate"
-#borf.script.config "borf.AI:Configuration"
 #borf.script.common "borf.AI:CommonSkills"
 #borf.script.other "borf.AI:OtherSkills"
 #borf.script.other2 "borf.AI:OtherSkillsChild"
