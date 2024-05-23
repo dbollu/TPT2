@@ -1,0 +1,4 @@
+; Simple scroll functions, int-based
+
+#sl(min, max, cur) if({cur} == {min}, {max}, {cur} - 1)
+#sr(min, max, cur) if({cur} == {max}, {min}, {cur} + 1)
