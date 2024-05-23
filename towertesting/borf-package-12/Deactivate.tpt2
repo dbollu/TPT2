@@ -13,6 +13,8 @@ local int i
 
 stop_scripts = {array({borf.script.common} . ";" . {borf.script.other} . ";" . {borf.script.other2} . ";" . {borf.script.era} . ";" . {borf.script.inf})}
 
+waituntil(health(false) == 0.0 || isTowerTesting == false)
+
 loop:
     stop({get(stop_scripts, i)})
     i += 1
