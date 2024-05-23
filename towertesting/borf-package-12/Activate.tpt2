@@ -1,16 +1,16 @@
-:import macro.towertesting
 :import borf.macros
 
 :global string Version
 :global string Running
 
 wakeup()
-game.newround()
-
-{tower_alive}
 
 Running = {borf.package.name}
 Version = {borf.package.version}
+
+execute({borf.script.ctl})
+
+waituntil(isTowerTesting())
 
 execute({borf.script.era})
 

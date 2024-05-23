@@ -20,16 +20,16 @@
 ; since they're macros, you have to modify them in the editor, you can't do it
 ; ingame!
 
-; Kill the current run
+; Kill the current run (tbd)
 #borf.tower.suicide k
-; Switch between FARMING and PUSHING modes
-#borf.resstrat.swap s
 ; Scroll through regions
 #borf.region.scrollup r
 #borf.region.scrolldown t
 ; Scroll through difficulties
 #borf.difficulty.raise d
 #borf.difficulty.lower f
+; Start a run at the selected difficulty and region (tbd)
+#borf.tower.startrun s
 
 ; ----------------------------
 ; UTILITY MACROS, DON'T TOUCH!
@@ -41,6 +41,7 @@
 
 ; some aliases for scripts (warning, spoilers in a couple script names)
 #borf.script.start "borf.AI:Activate"
+#borf.script.ctl "borf.AI:Controller"
 #borf.script.common "borf.AI:CommonSkills"
 #borf.script.other "borf.AI:OtherSkills"
 #borf.script.other2 "borf.AI:OtherSkillsChild"
