@@ -1,4 +1,5 @@
 :import jthierry.macro.array
+:import jthierry.macro.skillID
 
 :global string instant_skills
 :global string target_skills
@@ -10,12 +11,17 @@
 ; Configure the skills you want the AI to use.
 ; The variables must be semicolon-separated lists of module IDs.
 ; You can set them in-game.
+; Below is an example config for a Neutral-based BP.
 ; instant_skills is for skills that require the useinstant() function
 ; target_skills is for skills that require the useposition() function
 ; useonce_skills is mostly used for toggleables
-instant_skills = ""
-target_skills = ""
+
+instant_skills = {NeutralFocus} . ";" . {Desperado}
+target_skills = {Something}
 useonce_skills = ""
+
+; Do not modify the code below this point
+; ---------------------------------------
 
 useonce_array = {array(useonce_skills)}
 i = 0
