@@ -3,11 +3,19 @@
 key.{borf.region.scrollup}()
 key.{borf.region.scrolldown}()
 
-#region_str if(region == 0, "FOREST", if(region == 1, "DESERT", if(region == 2, "WINTER",\
-    if(region == 3, "UNDERGROUND", if(region == 4, "VOLCANO", if(region == 5, "HIGH MOUNTAIN",\
-    if(region == 6, "JUNGLE", if(region == 7, "METALLIC RUINS", if(region == 8, "BEACH",\
-    if(region == 9, "OCEAN", if(region == 10, "NEUTRAL", if(region == 11, "DARK REALM",\
-    if(region == 12, "HEAVEN", if(region == 13, "UNIVERSE", "CHAOS"))))))))))))))
+#region_up if(gsg("<sprite=22>") == "CHAOS", "FOREST", if(gsg("<sprite=22>") == "FOREST", "DESERT", if(gsg("<sprite=22>") == "DESERT", "WINTER",\
+    if(gsg("<sprite=22>") == "WINTER", "UNDERGROUND", if(gsg("<sprite=22>") == "UNDERGROUND", "VOLCANO", if(gsg("<sprite=22>") == "VOLCANO", "HIGH MOUNTAIN",\
+    if(gsg("<sprite=22>") == "HIGH MOUNTAIN", "JUNGLE", if(gsg("<sprite=22>") == "JUNGLE", "METALLIC RUINS", if(gsg("<sprite=22>") == "METALLIC RUINS", "BEACH",\
+    if(gsg("<sprite=22>") == "BEACH", "OCEAN", if(gsg("<sprite=22>") == "OCEAN", "NEUTRAL", if(gsg("<sprite=22>") == "NEUTRAL", "DARK REALM",\
+    if(gsg("<sprite=22>") == "DARK REALM", "HEAVEN", if(gsg("<sprite=22>") == "HEAVEN", "UNIVERSE", if(gsg("<sprite=22>") == "UNIVERSE", "CHAOS", {borf.error})))))))))))))))
+
+#region_down if(gsg("<sprite=22>") == "CHAOS", "UNIVERSE", if(gsg("<sprite=22>") == "FOREST", "CHAOS", if(gsg("<sprite=22>") == "DESERT", "FOREST",\
+    if(gsg("<sprite=22>") == "WINTER", "DESERT", if(gsg("<sprite=22>") == "UNDERGROUND", "WINTER", if(gsg("<sprite=22>") == "VOLCANO", "UNDERGROUND",\
+    if(gsg("<sprite=22>") == "HIGH MOUNTAIN", "VOLCANO", if(gsg("<sprite=22>") == "JUNGLE", "HIGH MOUNTAIN", if(gsg("<sprite=22>") == "METALLIC RUINS", "JUNGLE",\
+    if(gsg("<sprite=22>") == "BEACH", "METALLIC RUINS", if(gsg("<sprite=22>") == "OCEAN", "BEACH", if(gsg("<sprite=22>") == "NEUTRAL", "OCEAN",\
+    if(gsg("<sprite=22>") == "DARK REALM", "NEUTRAL", if(gsg("<sprite=22>") == "HEAVEN", "DARK REALM", if(gsg("<sprite=22>") == "UNIVERSE", "HEAVEN", {borf.error})))))))))))))))
 
 
-gss("<sprite=22>", {region_str})
+gss("<sprite=22>", \
+    if(impulse() == "key." . {borf.region.scrollup}, {region_up},\
+    if(impulse() == "key." . {borf.region.scrolldown}, {region_down})))
