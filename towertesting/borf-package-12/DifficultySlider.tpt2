@@ -1,0 +1,24 @@
+:import borf.macros
+
+key.{borf.difficulty.raise}()
+key.{borf.difficulty.lower}()
+
+#diff_raise if(gsg("<sprite=15>") == "<color=#0000FF>IMPOSSIBLE", "<color=#00FF00>EASY",\
+    if(gsg("<sprite=15>") == "<color=#00FF00>EASY", "<color=#FFFF00>MEDIUM",\
+    if(gsg("<sprite=15>") == "<color=#FFFF00>MEDIUM", "<color=#FF4000>HARD",\
+    if(gsg("<sprite=15>") == "<color=#FF4000>HARD", "<color=#FF00FF>INSANE",\
+    if(gsg("<sprite=15>") == "<color=#FF00FF>INSANE", "<color=#BB00BB>NIGHTMARE",\
+    if(gsg("<sprite=15>") == "<color=#BB00BB>NIGHTMARE", "<color=#0000FF>IMPOSSIBLE", {borf.error}))))))
+
+#diff_lower if(gsg("<sprite=15>") == "<color=#0000FF>IMPOSSIBLE", "<color=#BB00BB>NIGHTMARE",\
+    if(gsg("<sprite=15>") == "<color=#00FF00>EASY", "<color=#0000FF>IMPOSSIBLE",\
+    if(gsg("<sprite=15>") == "<color=#FFFF00>MEDIUM", "<color=#00FF00>EASY",\
+    if(gsg("<sprite=15>") == "<color=#FF4000>HARD", "<color=#FFFF00>MEDIUM",\
+    if(gsg("<sprite=15>") == "<color=#FF00FF>INSANE", "<color=#FF4000>HARD",\
+    if(gsg("<sprite=15>") == "<color=#BB00BB>NIGHTMARE", "<color=#FF00FF>INSANE", {borf.error}))))))
+
+
+gss("<sprite=15>", \
+    if(impulse() == "key." . {borf.difficulty.raise}, {diff_raise},\
+    if(impulse() == "key." . {borf.difficulty.lower}, {diff_lower})))
+

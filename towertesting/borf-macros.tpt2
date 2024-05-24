@@ -20,6 +20,8 @@
 ; since they're macros, you have to modify them in the editor, you can't do it
 ; ingame!
 
+; Start a run at the selected difficulty and region (tbd)
+#borf.tower.startrun s
 ; Kill the current run (tbd)
 #borf.tower.suicide k
 ; Scroll through regions
@@ -28,8 +30,6 @@
 ; Scroll through difficulties
 #borf.difficulty.raise d
 #borf.difficulty.lower f
-; Start a run at the selected difficulty and region (tbd)
-#borf.tower.startrun s
 
 ; ----------------------------
 ; UTILITY MACROS, DON'T TOUCH!
@@ -39,9 +39,11 @@
 ; useposition instead of useinstant)
 #borf.tower.position vec(0.0, 0.0)
 
+; error message in case something bad happens
+#borf.error "<color=#FF0000>ERROR, PLEASE RELOAD AI!"
+
 ; some aliases for scripts (warning, spoilers in a couple script names)
 #borf.script.start "borf.AI:Activate"
-#borf.script.ctl "borf.AI:Controller"
 #borf.script.common "borf.AI:CommonSkills"
 #borf.script.other "borf.AI:OtherSkills"
 #borf.script.other2 "borf.AI:OtherSkillsChild"

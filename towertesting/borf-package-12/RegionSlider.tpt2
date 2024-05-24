@@ -1,0 +1,13 @@
+:import borf.macros
+
+key.{borf.region.scrollup}()
+key.{borf.region.scrolldown}()
+
+#region_str if(region == 0, "FOREST", if(region == 1, "DESERT", if(region == 2, "WINTER",\
+    if(region == 3, "UNDERGROUND", if(region == 4, "VOLCANO", if(region == 5, "HIGH MOUNTAIN",\
+    if(region == 6, "JUNGLE", if(region == 7, "METALLIC RUINS", if(region == 8, "BEACH",\
+    if(region == 9, "OCEAN", if(region == 10, "NEUTRAL", if(region == 11, "DARK REALM",\
+    if(region == 12, "HEAVEN", if(region == 13, "UNIVERSE", "CHAOS"))))))))))))))
+
+
+gss("<sprite=22>", {region_str})

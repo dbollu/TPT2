@@ -5,19 +5,23 @@
 
 wakeup()
 
-Running = {borf.package.name}
-Version = {borf.package.version}
+setup:
+    gss("<sprite=15>", "<color=#00FF00>EASY")
+    gss("<sprite=22>", "FOREST")
+    Running = {borf.package.name}
+    Version = {borf.package.version}
+gotoif(health(false) == 0.0, standby)
 
-execute({borf.script.ctl})
+start:
+    execute({borf.script.era})
+    execute({borf.script.inf})
+    execute({borf.script.common})
+    execute({borf.script.other})
 
-waituntil(isTowerTesting())
+stop:
+    waituntil(health(false == 0))
+    executesync({borf.script.stop})
 
-execute({borf.script.era})
-
-execute({borf.script.inf})
-execute({borf.script.common})
-execute({borf.script.other})
-
-; This won't actually execute unless the run ends
-; see the script itself for further information
-execute({borf.script.stop})
+standby:
+    waituntil(health(false != 0))
+goto(start)
