@@ -1,0 +1,4 @@
+:name <sprite=23>TNT:Set Idle
+
+waituntil(gdg("<sprite=24>") >= 60.0)
+exit()

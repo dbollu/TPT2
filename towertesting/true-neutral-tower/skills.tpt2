@@ -1,0 +1,40 @@
+:name <sprite=23>TNT:Skills
+
+:global int pid_count
+:local int pid
+
+#tpos vec(0.0, 0.0)
+
+assign:
+	pid = pid_count
+	gotoif(spam, pid < 3)
+	gotoif(fr, pid < 4)
+	gotoif(defense, pid < 5)
+	goto(ls)
+
+; need 3 processes for the super modules
+spam:
+	useinstant(active.index("spell.multishot"))
+	useinstant(active.index("spell.superbounce"))
+goto(spam)
+
+; need 1 process for neutral focus and reboot
+fr:
+	useinstant(active.index("focus.neutral"))
+	useinstant(if(health(false) >= 0.1, active.index("spell.reboot"), -1))
+goto(fr)
+
+; need 1 process for the defensive skills
+defense:
+	useinstant(active.index("spell.advancedheal"))
+	useinstant(active.index("spell.simpleheal"))
+	useinstant(active.index("spell.dispel"))
+goto(defense)
+
+; need 1 process for loso and something
+ls:
+	useinstant(active.index("spell.drone.system"))
+	wait(35.0 / 3.0)
+	useposition(active.index("spell.something"), {tpos})
+	waituntil(cooldown(active.index("spell.drone.system")) == 0.0)
+goto(ls)

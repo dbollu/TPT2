@@ -1,0 +1,4 @@
+:name <sprite=23>TNT:<sprite=24>
+
+gds("<sprite=24>", gdg("<sprite=24>") + time.delta())
+goto(1)

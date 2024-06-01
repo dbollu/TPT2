@@ -1,0 +1,11 @@
+:name <sprite=23>TNT:Infinity
+
+disable.inf("spell.drone.system")
+waituntil(xp() > 1e6)
+disable.inf("cat.power")
+waituntil(xp() > 1e9)
+disable.inf("shield.universal")
+waituntil(xp() > 1e12)
+disable.inf("shield.advanced")
+waituntil(xp() > 1e15)
+disable.inf("spell.advancedheal")

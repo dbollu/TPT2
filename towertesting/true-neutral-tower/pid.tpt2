@@ -1,0 +1,5 @@
+:name <sprite=23>TNT:PID
+
+:global int pid_count
+
+pid_count += 1

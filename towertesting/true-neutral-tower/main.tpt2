@@ -1,0 +1,53 @@
+:name <sprite=23>TNT:Mainloop
+
+:global int pid
+:local bool set_idle
+
+wakeup()
+
+#advance_pid executesync("<sprite=23>TNT:PID")
+
+#era "<sprite=23>TNT:Era"
+#idle "<sprite=23>TNT:Set Idle"
+#inf "<sprite=23>TNT:Infinity"
+#skills "<sprite=23>TNT:Skills"
+#time "<sprite=23>TNT:<sprite=24>"
+
+init:
+	pid = 0
+	gds("<sprite=24>", time.delta() * 2.0)
+    set_idle = false
+gotoif(standby, health(true) == 0.0)
+
+start:
+	era:
+		execute({era})
+
+	activate_skills:
+		execute({skills})
+		wait(0.05)
+		{advance_pid}
+	gotoif(activate_skills, pid < 6)
+
+	infinity:
+		execute({inf})
+
+	idle:
+		execute({time})
+		wait(0.05)
+		{advance_pid}
+		execute(if(pid == 6 && set_idle, {idle}, ""))
+	gotoif(idle, pid < 8)
+
+stop:
+	waituntil(health(true) == 0.0)
+	stop({era})
+	stop({idle})
+	stop({inf})
+	stop({skills})
+	stop({time})
+	gu("<sprite=24>")
+
+standby:
+	waituntil(health(true) != 0.0)
+	goto(start)
