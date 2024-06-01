@@ -37,8 +37,12 @@ are negatively impacted by Borf and therefore require some forms of CDR. The
 Low Tide module will provide part of the required CDR.
 
 With Low Tide hogging much of the tower's energy, we need Energy Recycling
-and Power Conversion so the tower can spam all its skills. Dispel is mostly
-setup for Defense Overload, much like in the original IAD.
+and Power Conversion so the tower can spam all its skills.
+
+Dispel is mostly setup for Defense Overload, much like in the original IAD.
+However, Simple Heal and Advanced Heal are also here to keep a consistent
+Defense Overload boost. ***MAKE SURE TO DOWNGRADE THOSE 2 MODULES ALL THE***
+***WAY TO TIER 1 AND LEVEL 0*** so Emergency Crit can get more uptime.
 
 Fire Armor is meant for early-mid Infinity, where we do not have yet brought
 all era costs down to zero. It effectively neutralizes the threat of Fire
@@ -50,14 +54,18 @@ Power of the Cat is here as a safety net; its layers can recharge at a
 consistent rate, so it's more reliable than Daigoparry in that department.
 
 Attack Speed, Quantum Speed and Rapidfire are only here for projectile speed
-since penalties to APS get shifted to projectile speed when we use Borf.
+since penalties to APS get shifted to projectile speed when we use Borf. This
+is needed to counter wizard-types and Steini's CB's APS penalty.
+
+Reboot is setup for Emergency Crit, and is going to be used regularly to keep
+the tower at 1HP.
 
 ### Recommended Anvil Setup
 
 For this blueprint you might want a lock on `Max Shield` on early Infinity
 to deal with the few occasional hits. Obviously spend lots of yellow frags on
-`CDR` to help Dispel proc Defense Overload more consistently. This also helps
-with spamming the two "Super" skills for even more kills.
+`CDR` to help blue modules proc Defense Overload more consistently. This also
+helps with spamming the two "Super" skills for even more kills.
 
 If you're worried about not being able to one-tap anymore, lock `Neutral DF`
 and/or farm red frags for more `Neutral DF`. You can also try farming purple
@@ -70,5 +78,8 @@ TBD
 
 ## Changelog
 
-`0.1`: Introduced. Added BP code and documentation. Added this changelog.
-`0.2`: Removed Impetus, Dark Sacrifice, Shield Amplifier, Sun Energy and Bulwark. Added Bash, Reboot, Simple Heal, Advanced Heal and Universal Block. Added "human-readable" module loadout.
+- `0.1`: Introduced. Added BP code and documentation. Added this changelog.
+- `0.2`: Removed Impetus, Dark Sacrifice, Shield Amplifier, Sun Energy and
+Bulwark. Added Bash, Reboot, Simple Heal, Advanced Heal and Universal Block.
+Added "human-readable" module loadout.
+- `0.2.1`: More detailed explanation in the Module Setup section.
