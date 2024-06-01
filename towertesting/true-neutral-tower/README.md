@@ -7,10 +7,27 @@ capabilities.
 
 ## The Blueprint
 
-Import code:
+### Import Code
+
 ```
-VVKxkt0gDPyVzPsAiksX7lKlTnVdJgUGYWseBo8k7o0nk3+PsMH3UpmVYHe18p/blCpshFn49u3Lr9srKxB4e/n6/f3nu3Uizt/N5Bi95S05XjroHd4AwgBrTYK8FLnelZo9DERuwxCRwGKOmFF28x/LVT2FVA9SeiI9MdcNqBN79dr9HMcMVcilH+s8NHHdQCqfbViBZsh+tyyEdzCqk7Mqs9N+RA8mOLprF9SI8YtD7apASnYuZU5g1KMG1rRnjGIWnJdVvYjetLH4ysODnUphMTXjBxArPhx8wqivghMsWflFgHbrS27NVtrKA8gSMLI4VTNuYnNEd4YQsH0tLwgpGBc+2qVw4XVLOo4yFCVMxQUTIEJmXUUlp4OBv7cQHenuaC1kCGKb1ULWiPaeaQcEczsdZkeNa/5s+90nzPMoxFQeVjCAaYenQceCh88L94cXngrFse6ygiyN/Qh8pHuNeFU651PgTnqO96xrGuC6F0sKjbdHY6aaHm371w9njoW2WM/MqWQwvOvfsd5+//0H
+VVIxjtwwDPxKsA9QcemiJFXqVNcFKWSJsomVRYOk72AE+ftRtuXda2wNRQ7JGf27DWWFhbGq3L59+XP7LgYUfrx8/fn6+9UH1RDvbgiC0Ue7cRVW5VB+zeOBjytZSpDpBFgzVtTNHdFOIgtA6mBei6JMpFcLWmuEjjgsmDIyPMg+sdi3lCeSA8u6AH8mGtoA+6AwA49Q4+ZFGe/gbLhaG5eCdXBxCmjQKkrxI9FYwFlzk6fRjZjVTThOs9GrZfpMcZUuhx+IRN1a8Q1YDO8tHzBbVQqKVI1fFXjrI+O8FJjAco5ASG/BGqY9FKk2gla20DuwZxAUbQkuDOJ2hY66hO3vZUIo6WLxZPWFQnIJMlQxXVYOtivEe5MqcPJDIRPqMWvgmdgx5CaHh2qybaezJ2AY22nf5xGLWyxYxx7Ihd69YgLXDk8CdEf7rBc+Cy88EOdzOwYT+LKZZtCptdpd6RYEUxIzAl+Rs8GTK0FPIe/VvOzgystUUuO9HpbbXb4eXGKq4GSzJzPf/v7/AA==
 ```
+
+### Module Loadout
+
+Basic Attack, Neutral Crit, Critical Strike, Splash, Infinity Splash,
+Attack Speed, Multishot, Basic Bouncing, Rapidfire, Quantum Speed,
+Super Multishot, Super Bounce, Bash, Emergency Crit, Planned Strike,
+Steini's Chained Ball, Google's Influence, High Mountain Gift, Neutral Focus,
+Anti-Universal Projectiles, Anti-Universal Crit, Battery Foundation,
+Simple Heal (min. tier and min. level),
+Advanced Heal (min. tier and min. level), Power Conversion, Fire Armor,
+Dispel, Advanced Shield, Defense Overload, Checkerboard Aura, Universal Block,
+Refined Armor, Energy, Energy Regeneration, Energy Recycling, Energy Flow,
+Low Tide, Something, Neutral Gift, Neutral Amplifier, Universal Shield,
+Power Of The Cat, Knight's Boost of Power, Unfolding, Focused Multishot,
+L.O.S.O. Drone System, Infinity Foundation, Infinity Shield, Infinity Energy,
+Borf, Reboot
 
 ### Module Setup Explanation
 
@@ -54,3 +71,4 @@ TBD
 ## Changelog
 
 `0.1`: Introduced. Added BP code and documentation. Added this changelog.
+`0.2`: Removed Impetus, Dark Sacrifice, Shield Amplifier, Sun Energy and Bulwark. Added Bash, Reboot, Simple Heal, Advanced Heal and Universal Block. Added "human-readable" module loadout.
