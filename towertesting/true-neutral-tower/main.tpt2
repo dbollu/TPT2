@@ -46,6 +46,7 @@ stop:
 	stop({skills})
 	stop({time})
 	gu("<sprite=24>")
+	gu("pid_count")
 
 standby:
 	waituntil(health(true) != 0.0)
